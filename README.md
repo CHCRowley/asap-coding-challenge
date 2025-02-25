@@ -13,6 +13,19 @@ Repository for the ASAP February 2025 away day coding challenge.
 
 5. Access the app from `http://127.0.0.1:5000/`
 
+## Project structure
+
+- `data` contains:
+  - `local_authority_district_boundaries.geojson`: this contains the spatial data for each local authority.
+  - `median_annual_pay.tsv`: this contains the median annual pay for each local authority where available, from 2004 to 2024.
+  
+- The `mapping` module is used to process the data:
+  - `mapping.prep_data` is used to read and process the median annual pay data into a Pandas DataFrame.
+  - `mapping.folium_map` is used to convert the spatial data into a GeoPandas DataFrame, which is then merged with the annual pay DataFrame. This merged dataset is then used to create a Folium Choropleth map.
+  - `testing_notebook` is offered as a space to conduct exploratory data analysis and prototype Folium maps.
+  
+- `app.py` contains the Flask code. It calls functions from `mapping.folium_map` to generate a Folium Choropleth map, which is then rendered as an iframe inside `templates/home.html` and served when calling `flask run`.
+
 ## Submitting your challenge
 
 When you have finished the challenge, push your changes and open up a merge request.
