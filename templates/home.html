@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Coding challenge</title>
+            <style>
+
+html {
+  background-color: #003c57; 
+}
+
+body {
+  min-height: 100vh;
+  max-width: 800px;
+  background-color: #ffff;
+  margin: 0 auto;
+}
+
+div, iframe {
+  display: block;
+  border-style:none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+                padding-bottom: 6vh;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+</head>
+<body class="vscode-body vscode-light">
+<h2 id="coding-challenge">Coding challenge</h2>
+<p>Welcome to the ASAP away day coding challenge.</p>
+<p>For this challenge you will work in teams to try to develop an interactive web application using 
+  <a href="https://flask.palletsprojects.com/en/stable/">Flask</a> and <a href="https://python-visualization.github.io/folium/latest/">Folium</a>.</p>
+<p>Below you will see a simple web application - it is a Choropleth map showing the median annual pay in 2024 for each 
+  local authority in Britain. The spatial data for the local authority boundaries is located in 
+  <code>data/local_authority_district_boundaries.geojson</code>, and the median annual pay data is sourced from 
+  <code>data/median_annual_pay.tsv</code>.</p>
+<h3 id="basic-application">Basic application</h3>
+<div>{{ iframe|safe }}</div>
+<h3 id="task-1">Task 1</h3>
+<p>Add interactive labels to the map so that we can click on the map to get the data for that local authority.</p>
+<h3 id="task-2">Task 2</h3>
+<p>The app currently only shows data from 2024. Can you modify the app so that we can choose to view median annual 
+  pay data from 2014-2024 with an interactive element, such as a drop-down list or slider? You will also need to 
+  modify the functions inside the <code>mapping</code> module so that they accept additional parameters.</p>
+<h3 id="extension-task-1">Extension task 1</h3>
+<p>Modify <code>app.py</code> so the app displays in a fullscreen window. Add CSS to style the app similar to the <a href="https://www.ons.gov.uk/">ONS website</a>.</p>
+<h3 id="extension-task-2">Extension task 2</h3>
+<p>Package and deploy the app to production using <a href="https://docs.pylonsproject.org/projects/waitress/en/stable/">Waitress</a>.</p>
+</body>
+</html>
