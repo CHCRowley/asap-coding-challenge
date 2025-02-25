@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-        <html>
-        <head>
-            <meta charset="UTF-8">
-            <title>Coding challenge</title>
-            <style>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Coding challenge</title>
 
+<style>
 html {
   background-color: #003c57; 
 }
@@ -20,20 +20,21 @@ div, iframe {
   display: block;
   border-style:none;
 }
-
 </style>
             
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+
 <style>
-            body {
-                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
-                font-size: 14px;
-                line-height: 1.6;
-                padding-bottom: 6vh;
-            }
-        </style>
-        <style>
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-bottom: 6vh;
+}
+</style>
+
+<style>
 .task-list-item {
     list-style-type: none;
 }
@@ -44,6 +45,7 @@ div, iframe {
     pointer-events: none;
 }
 </style>
+
 <style>
 :root {
   --color-note: #0969da;
@@ -53,8 +55,8 @@ div, iframe {
   --color-caution: #d1242f;
   --color-important: #8250df;
 }
-
 </style>
+
 <style>
 @media (prefers-color-scheme: dark) {
   :root {
@@ -66,8 +68,8 @@ div, iframe {
     --color-important: #a371f7;
   }
 }
-
 </style>
+
 <style>
 .markdown-alert {
   padding: 0.5rem 1rem;
@@ -138,28 +140,31 @@ div, iframe {
 .markdown-alert.markdown-alert-caution .markdown-alert-title {
   color: var(--color-caution);
 }
-
 </style>
         
 </head>
+
 <body class="vscode-body vscode-light">
+
 <h2 id="coding-challenge">Coding challenge</h2>
-<p>Welcome to the ASAP away day coding challenge.</p>
-<p>For this challenge you will work in teams to develop an interactive web application using 
-  <a href="https://flask.palletsprojects.com/en/stable/">Flask</a> and <a href="https://python-visualization.github.io/folium/latest/">Folium</a>.</p>
-<p>Below you will see a basic application - it is a Choropleth map showing the median annual pay in 2024 for each 
-  local authority in Britain.</p>
+  <p>Welcome to the ASAP away day coding challenge.</p>
+  <p>For this challenge you will work in teams to develop an interactive web application using 
+    <a href="https://flask.palletsprojects.com/en/stable/">Flask</a> and <a href="https://python-visualization.github.io/folium/latest/">Folium</a>.</p>
+  <p>Below you will see a basic application - it is a Choropleth map showing the median annual pay in 2024 for each 
+    local authority in Britain.</p>
 <h3 id="basic-application">Basic application</h3>
-<div>{{ iframe|safe }}</div>
+  <div>{{ iframe|safe }}</div>
 <h3 id="task-1">Task 1</h3>
-<p>Add interactive labels to the map so that we can click on the map to get the data for that local authority.</p>
+  <p>Add interactive labels to the map so that we can click on the map to get the data for that local authority.</p>
 <h3 id="task-2">Task 2</h3>
-<p>The app currently only shows data from 2024. Can you modify the app so that we can choose to view median annual 
-  pay data from 2014-2024 with an interactive element, such as a drop-down list or slider? You will also need to 
-  modify the functions inside the <code>mapping</code> module so that they accept additional parameters.</p>
+  <p>The app currently only shows data from 2024. Can you modify the app so that we can choose to view median annual 
+    pay data from 2014-2024 with an interactive element, such as a drop-down list or slider? You will also need to 
+    modify the functions inside the <code>mapping</code> module so that they accept additional parameters.</p>
 <h3 id="extension-task-1">Extension task 1</h3>
-<p>Modify <code>app.py</code> so the app displays in a fullscreen window. Add CSS to style the app similar to the <a href="https://www.ons.gov.uk/">ONS website</a>.</p>
+  <p>Modify <code>app.py</code> so the app displays in a fullscreen window. Add CSS to style the app similar 
+    to the <a href="https://www.ons.gov.uk/">ONS website</a>.</p>
 <h3 id="extension-task-2">Extension task 2</h3>
-<p>Package and deploy the app to production using <a href="https://docs.pylonsproject.org/projects/waitress/en/stable/">Waitress</a>.</p>
+  <p>Package and deploy the app to production using <a href="https://docs.pylonsproject.org/projects/waitress/en/stable/">Waitress</a>.</p>
 </body>
+
 </html>
