@@ -1,0 +1,6 @@
+duckdb
+flask
+folium
+jupyterlab
+pandas
+pytest
