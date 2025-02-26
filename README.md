@@ -1,11 +1,12 @@
 # asap-coding-challenge
-Repository for the ASAP February 2025 away day coding challenge.
+
+This repository is for the ASAP February 2025 away day coding challenge. It is a web application created with Flask that is used to display an interactive JavaScript map created with Folium (a Python API for the Leaflet JavaScript library). Your task will be to extend this app to make it more useful.
 
 ## Instructions
 
 1. Fork the repository to your personal account and clone the repository
    
-2. Create a virtual environment for the project
+2. Create a virtual Python environment for the project (tested on Python 3.11)
    
 3. Navigate to the top level project directory and install the requirements using `pip install -r requirements.txt`
    
