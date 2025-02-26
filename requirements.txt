@@ -1,6 +1,7 @@
 duckdb
 flask
 folium
+geopandas
 jupyterlab
 pandas
 pytest
