@@ -11,43 +11,30 @@ create_gdf <- function() {
 }
 
 make_map <- function(gdf){
-    basemap <- leaflet::leaflet() %>%
+    gdf$bin <- dplyr::ntile(x = gdf$median_ann_pay,5)
+    pal <- leaflet::colorBin("YlOrRd",domain = gdf$bin, bins = c(1,2,3,4,5))
+    leaflet::leaflet() %>%
         # add different provider tiles
         leaflet::addProviderTiles(
             "OpenStreetMap",
             # give the layer a name
             group = "OpenStreetMap"
         ) %>%
-        leaflet::addProviderTiles(
-            "Stamen.Toner",
-            group = "Stamen.Toner"
-        ) %>%
-        leaflet::addProviderTiles(
-            "Stamen.Terrain",
-            group = "Stamen.Terrain"
-        ) %>%
-        leaflet::addProviderTiles(
-            "Esri.WorldStreetMap",
-            group = "Esri.WorldStreetMap"
-        ) %>%
-        leaflet::addProviderTiles(
-            "Wikimedia",
-            group = "Wikimedia"
-        ) %>%
-        leaflet::addProviderTiles(
-            "CartoDB.Positron",
-            group = "CartoDB.Positron"
-        ) %>%
-        leaflet::addProviderTiles(
-            "Esri.WorldImagery",
-            group = "Esri.WorldImagery"
+        leaflet::addPolygons(
+            data = gdf,
+            color = "#E2E2E2",
+            # set the opacity of the outline
+            opacity = 0.1,
+            # set the stroke width in pixels
+            weight = 0.5,
+            # set the fill opacity
+            #fillOpacity = 0.2
+            fillColor = ~pal(bin),
         ) %>%
         # add a layers control
         leaflet::addLayersControl(
             baseGroups = c(
-                "OpenStreetMap", "Stamen.Toner",
-                "Stamen.Terrain", "Esri.WorldStreetMap",
-                "Wikimedia", "CartoDB.Positron", "Esri.WorldImagery"
+                "OpenStreetMap"
             ),
             # position it on the topleft
             position = "topleft"
