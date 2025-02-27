@@ -13,6 +13,10 @@ create_gdf <- function() {
 make_map <- function(gdf){
     gdf$bin <- dplyr::ntile(x = gdf$median_ann_pay,5)
     pal <- leaflet::colorBin("YlOrRd",domain = gdf$bin, bins = c(1,2,3,4,5))
+    la_popup <- paste0("<strong>LA: </strong>",
+                       gdf$lad,
+                       "<br><strong>Median income: </br></strong>",
+                       gdf$median_ann_pay)
     leaflet::leaflet() %>%
         # add different provider tiles
         leaflet::addProviderTiles(
@@ -30,6 +34,7 @@ make_map <- function(gdf){
             # set the fill opacity
             #fillOpacity = 0.2
             fillColor = ~pal(bin),
+            popup = la_popup
         ) %>%
         # add a layers control
         leaflet::addLayersControl(
