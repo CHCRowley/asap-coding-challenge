@@ -9,7 +9,7 @@ get_df_from_db <- function() {
         data.frame()
     
     df$median_ann_pay <- as.numeric(df$median_ann_pay)
-    df$year <- as.numeric(year)
+    df$year <- as.numeric(df$year)
     return(df)
     
 }
