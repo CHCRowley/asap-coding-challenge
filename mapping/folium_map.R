@@ -5,9 +5,53 @@ create_gdf <- function() {
     sf <- sf::read_sf("data/local_authority_district_boundaries.geojson")
     sf <- dplyr::rename(sf, lad = LAD24NM)
     
-    s_df <- dplyr::left_join(x = sf, y = lad_df, by = "lad")
+    gdf <- dplyr::left_join(x = sf, y = lad_df, by = "lad")
     
-    return(s_df)
+    return(gdf)
+}
+
+make_map <- function(gdf){
+    basemap <- leaflet::leaflet() %>%
+        # add different provider tiles
+        leaflet::addProviderTiles(
+            "OpenStreetMap",
+            # give the layer a name
+            group = "OpenStreetMap"
+        ) %>%
+        leaflet::addProviderTiles(
+            "Stamen.Toner",
+            group = "Stamen.Toner"
+        ) %>%
+        leaflet::addProviderTiles(
+            "Stamen.Terrain",
+            group = "Stamen.Terrain"
+        ) %>%
+        leaflet::addProviderTiles(
+            "Esri.WorldStreetMap",
+            group = "Esri.WorldStreetMap"
+        ) %>%
+        leaflet::addProviderTiles(
+            "Wikimedia",
+            group = "Wikimedia"
+        ) %>%
+        leaflet::addProviderTiles(
+            "CartoDB.Positron",
+            group = "CartoDB.Positron"
+        ) %>%
+        leaflet::addProviderTiles(
+            "Esri.WorldImagery",
+            group = "Esri.WorldImagery"
+        ) %>%
+        # add a layers control
+        leaflet::addLayersControl(
+            baseGroups = c(
+                "OpenStreetMap", "Stamen.Toner",
+                "Stamen.Terrain", "Esri.WorldStreetMap",
+                "Wikimedia", "CartoDB.Positron", "Esri.WorldImagery"
+            ),
+            # position it on the topleft
+            position = "topleft"
+        )
 }
 
 # def generate_map_from_gdf(gdf, w, h):
