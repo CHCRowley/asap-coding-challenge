@@ -3,32 +3,16 @@ import geopandas
 import json
 from mapping.prep_data import *
 
-def create_gdf():
-    """
-    Function to create a GeoPandas DataFrame from the spatial data file 
-    and then merge feature data into it
-    """
-
-    # Get feature data
-    lad_df = get_df_from_db()
-
-    # Data cleaning
-    lad_df_2024 = lad_df[lad_df["year"]==2024]
-    lad_df_2024 = lad_df_2024.dropna()
-    lad_df_2024["median_ann_pay"] = lad_df_2024["median_ann_pay"].astype("int64")
-
-    # Get spatial data
-    gdf = geopandas.read_file("data/local_authority_district_boundaries.geojson")
-
-    # Join feature data on spatial data
-    gdf = gdf.merge(
-    lad_df_2024,
-    how="left",
-    left_on="LAD24NM",
-    right_on="lad"
-    )
-
-    return gdf
+create_gdf <- function() {
+    lad_df <- get_df_from_db()
+    
+    sf <- sf::read_sf("data/local_authority_district_boundaries.geojson")
+    sf <- dplyr::rename(sf, lad = LAD24NM)
+    
+    df <- dplyr::left_join(df, sf, by = lad)
+    
+    return(df)
+}
 
 def generate_map_from_gdf(gdf, w, h):
     """
